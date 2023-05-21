@@ -10,3 +10,8 @@ rustscan --help
 ```
 rustscan -a 192.168.206.145 -p 445
 ```
+
+# All Port Scan with Thread
+```
+rustscan -a 192.168.206.145 -r 0-65535 -ulimit 5000
+```
