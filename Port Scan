@@ -1,1 +1,36 @@
+Here is a cheatsheet for masscan in GitHub format:
 
+masscan Cheatsheet
+Masscan is a fast port scanner.
+
+Basic Usage
+Copy
+masscan -p1-65535 192.168.1.100 -oG results.txt
+Scan all 65535 ports on 192.168.1.100 and output results to results.txt in grepable format.
+
+Common Options
+-p - Ports to scan
+-oG - Output results in grepable format
+-oJ - Output results in JSON format
+--rate - Set scan rate limit in packets/sec
+-iL - Input list of targets from file
+-iR - Input random targets
+--exclude - Exclude specific ports from scanning
+Example Commands
+Scan top 1000 ports at 1000 packets/sec:
+
+Copy
+masscan -p1-1000 --rate=1000 192.168.1.100
+Scan top 100 ports, exclude port 22:
+
+Copy
+masscan -p1-100 --exclude=22 192.168.1.100
+Scan list of targets from targets.txt:
+
+Copy
+masscan -iL targets.txt -p22,80,443
+Scan 65536 random IP addresses, output to JSON:
+
+Copy
+masscan -iR 65536 -oJ results.json
+Hope this help gets you started with masscan! Let me know if you have any other questions.
